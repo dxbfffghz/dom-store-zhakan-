@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DOM Store — interactive product list built with pure JavaScript and the DOM API.">
+  <title>DOM Store — Akerke Zhakan</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="container">
+      <h1>DOM Store</h1>
+      <p class="subtitle">Interactive product list · pure JavaScript + DOM API</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <section class="card">
+      <h2>Add product</h2>
+      <form id="product-form" novalidate>
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" autocomplete="off">
+          <p class="error" id="name-error" role="alert"></p>
+        </div>
+
+        <div class="form-row">
+          <label for="price">Price (₸)</label>
+          <input type="number" id="price" name="price" step="any">
+          <p class="error" id="price-error" role="alert"></p>
+        </div>
+
+        <div class="form-row">
+          <label for="qty">Quantity</label>
+          <input type="number" id="qty" name="qty" step="1">
+          <p class="error" id="qty-error" role="alert"></p>
+        </div>
+
+        <button type="submit" class="btn">Add product</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Products</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>Sum</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="product-list">
+          <!-- rows rendered by app.js -->
+        </tbody>
+      </table>
+      <p class="empty" id="empty-msg" hidden>No products yet. Add the first one.</p>
+      <p class="total">Total: <span id="total">0</span> ₸</p>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 Akerke Zhakan · Lab 5 — DOM Store</p>
+    </div>
+  </footer>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
